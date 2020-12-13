@@ -1,0 +1,46 @@
+<%- include('../partials/_header') %>
+
+<div class="container mt-5">
+
+    <div class="row my-5">
+        <div class="col-sm-10 col-12">
+            <h3 id="quote" class="text-white">Modificar Bicicleta</h3>
+        </div>
+        <div class="col-sm-2 col-12">
+        <a class="btn btn-primary mx-auto" href="/bicicleta_list">Volver</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card  p-5 shadow">
+                          
+
+            <form action="/bicicletas/update/<%= bici.id%>" method="POST">
+                    
+            <div class="form-group">
+                    <label for="id" class='font-weight-bolder'>Code:</label>
+                    <input type="text"  class="form-control shadow-sm" name='code' value = "<%= bici.code %>" >
+                <div>    
+                <div class="form-group">    
+                    <label for="color" class='font-weight-bolder'>Color:</label>
+                    <input type="text"  class="form-control shadow-sm" name='color' value = "<%= bici.color %>">
+                <div>
+                <div class="form-group">         
+                    <label for="modelo" class='font-weight-bolder'>Modelo:</label>
+                    <input type="text"  class="form-control shadow-sm" name='modelo' value = "<%= bici.modelo %>">
+                <div>
+                <div class="form-group">  
+                    <label for="lat" class='font-weight-bolder'>Latitud:</label>
+                    <input type="text"  class="form-control shadow-sm" name='latitud' value = "<%= bici.ubicacion[0] %>">
+                <div>
+                <div class="form-group"> 
+                    <label for="long" class='font-weight-bolder'>Longitud:</label>
+                    <input type="text"  class="form-control shadow-sm" name='longitud' value = "<%= bici.ubicacion[1] %>">
+                <div>
+                <div>    
+                <button type="submit" class=" btn btn-info btn-block mt-3">Grabar</button>
+                </div>  
+            </form>   
+        </div>
+    </div>  
+</div>  

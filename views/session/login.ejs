@@ -1,0 +1,42 @@
+<%- include('../partials/_header') %>
+
+<link(rel='stylesheet', href='../../css/login.css')/>
+
+<div class="container mt-5">
+
+    <div class="row my-5">
+        <div class="col-sm-10 col-12">
+            <h3 id="quote" class="text-white">Admin Login</h3>
+            <p class="text-white" >Ingrese su email and password</p>
+        </div>
+        <div class="col-sm-2 col-12">
+        <a class="btn btn-primary mx-auto" href="/">Volver</a>
+        </div>
+        
+    </div>
+
+    <div class="container my-5 login-form">
+        
+        <div class="card  p-5 shadow ">  
+            <% if(info && info.message){ %>
+                <div  class="alert alert-danger"><%= info.message  %></div>
+            <% }; %>             
+            <form id="Login" action="/login" method="post">
+                <div class="form-group">
+                    <input class="form-control" id="username" type="email" placeholder="Email Address" name="username" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="password" type="password" placeholder="Password" name="password" />
+                </div>
+                <div class="forgot">
+                    <a href="/forgotPassword">Olvidé mi password</a>
+                </div>
+                <div >
+                    <a href="/auth/google" >Login con Google</a>
+                </div>
+                <button class="btn btn-info" type="submit">Login</button>
+            </form>
+        </div>
+    </div>         
+           
+</div>

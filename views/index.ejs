@@ -1,0 +1,139 @@
+<%- include('./partials/_header') %>
+
+
+    <!-- Navigation-->
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">BICICLETAS</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#map">Mapa</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="bicicletas">Bicicletas</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="usuarios">Usuarios</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li> 
+                    
+                    <% if (nombreUsuario == '') {%>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:orangered; font-weight: bold;" href="/login">Login</a></li> 
+                        
+                    <%} else {%>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:orangered; font-weight: bold;" href="#"><%= nombreUsuario%></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="/logout">Logout</a>
+                            </div>
+                          </li>
+                    <%} %>    
+ 
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">BICICLETAS</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">La primera comunidad onLine de ciclistas urbanos</h2>
+                <a class="btn btn-primary js-scroll-trigger" href="#about">Comenzar</a>
+            </div>
+        </div>
+    </header>
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-white mb-4">Comunidad de ciclistas urbanos</h2>
+                    <p class="text-white-50">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Maecenas eget orci ultrices, dapibus orci ac, tempus leo. 
+                        Nulla commodo tempus tortor vel tincidunt. Suspendisse sit
+                         amet faucibus lacus. Sed ullamcorper gravida metus, eu 
+                         vulputate lorem rutrum eu. Vestibulum nec quam vitae dui 
+                         pretium cursus. Pellentesque sed iaculis nisi.
+                    </p>
+                </div>
+            </div>
+            <img class="img-fluid" src="/images/bici.png" alt="" />
+        </div>
+    </section>
+
+
+    <!-- Mapa Bicicletas -->
+
+    <section class="projects-section bg-dark text-center" id="map">
+        <h2 class="text-white mb-5">Ubicación de las Bicicletas</h2>
+        <div class="container">       
+            <div id="mapid" style="width: 1100px; height: 600px;"></div>                
+        </div>
+    </section>
+
+    <!-- Signup-->
+    <section class="signup-section" id="signup">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto text-center">
+                    <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                    <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+                    <form class="form-inline d-flex">
+                        <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
+                        <button class="btn btn-primary mx-auto" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact-->
+    <section class="contact-section bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Address</h4>
+                            <hr class="my-4" />
+                            <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4" />
+                            <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <hr class="my-4" />
+                            <div class="small text-black-50">+1 (555) 902-8832</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+<%- include('./partials/_footer') %> 

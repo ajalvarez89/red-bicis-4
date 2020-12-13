@@ -1,0 +1,53 @@
+<%- include('../partials/_header') %>
+<div class="container mt-5">
+  
+  <div class="row my-5">
+      <div class="col-sm-10 col-12">
+          <h3 id="quote" class="text-white">Listado de Bicicletas</h3>
+      </div>
+      <div class="col-sm-2 col-12">
+        <a class="btn btn-primary mx-auto" href="/#map">Volver</a>
+      </div>
+  </div>
+  
+  <div class="card  p-5 shadow-sm">
+    <table class="table table-sm table-striped table-bordered ">
+        <thead>
+          <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Color</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Ubicacion</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for (bici of bicis) { %>
+                <tr>
+                    <th scope="row"><%= bici.code%></th>
+                    <td><%= bici.color%></td>
+                    <td><%= bici.modelo%></td>
+                    <td><%= bici.ubicacion%></td>
+                    <td><a href="bicicletas/update/<%= bici.id %>" class="btn btn-success">Modificar</a></td>
+                    <td><form class="form-inline" method="POST" action="bicicletas/delete/<%= bici.code %>" ><input type="hidden" name='code' value = <%= bici.code%> >
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </td>
+                    
+                  
+                </tr>
+            <% } %>                 
+        </tbody>
+      </table>
+
+    
+    <a class="btn btn-info " href="bicicletas/create">Agregar bicicleta</a>
+    
+    
+
+</div>
+  
+  
+
+</div>
